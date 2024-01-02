@@ -14,14 +14,26 @@ async function preCache() {
     return cache.addAll(STATIC_ASSETS)
 }
 
+async function cleanupCache() {
+    const key = await caches.keys()
+    const keysToDelete = keys.map(key => {
+        if (key !== CACHE_NAME) {
+            return caches.delete(key)
+        }
+    })
+    return Promise.all(keysToDelete)
+}
+
 self.addEventListener('install', event => {
     console.log("[SW] installed");
+    self.skipWaiting()
     event.waitUntil(preCache())
    
 })
 
 self.addEventListener('activate', event => {
     console.log("[SW] activated");
+    event.waitUntil(cleanupCache)
 })
 
 async function fetchAssets(event) {
