@@ -15,7 +15,7 @@ height: 100ch;
 
 .container{
 padding:20px;   
-width:400px;
+width:500px;
 background:white;
 border-radius:7px;
 position:absolute;
@@ -29,7 +29,7 @@ transition:all 1s;
 height:70px; 
 width:70px;
 position:relative;
-left:105px;
+left:205px;
 }
 
 .container .app-title{
@@ -134,8 +134,8 @@ width:40px;
 text-align:left;
 position:relative;
 left:9px;
-font-size:15px;left
-border:1px solid red;
+font-size:15px;
+/* border:1px solid red; */
 }
 
 .container .to .to-input input{
