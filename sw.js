@@ -27,8 +27,12 @@ async function cleanupCache() {
 self.addEventListener('install', event => {
     console.log("[SW] installed");
     self.skipWaiting()
-    event.waitUntil(preCache())
-   
+    event.waitUntil(
+        caches.open('sw-cache').then(function(cache) {
+            return cache.add('Currency.html');
+        })  
+    ) 
+        // event.waitUntil(preCache());
 })
 
 self.addEventListener('activate', event => {
@@ -48,5 +52,10 @@ async function fetchAssets(event) {
 }
 self.addEventListener('fetch', event => {
     console.log("[SW] fetched");
-    event.respondWith(fetchAssets(event))
+    // event.respondWith(fetchAssets(event));
+    event.respondWith(
+        caches.match(event.request).then(function(response){
+            return response || fetch(event.request);
+        })
+    )
 })

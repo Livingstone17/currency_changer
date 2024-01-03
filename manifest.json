@@ -1,0 +1,20 @@
+{
+    "short_name": "CEApp",
+    "name": "Currency Exchanger",
+    "icons": [
+      {
+        "src": "/logo/logo64",
+        "type": "image/png",
+        "sizes": "64x64"
+      },
+      {
+        "src": "/logo/logo96",
+        "type": "image/png",
+        "sizes": "96x96"
+      }
+    ],
+    "start_url": "/Currency.html",
+    "background_color": "#000000",
+    "display": "standalone",
+    "theme_color": "#ff0000"
+  }

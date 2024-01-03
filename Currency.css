@@ -15,7 +15,7 @@ height: 100ch;
 
 .container{
 padding:20px;   
-width:500px;
+width:400px;
 background:white;
 border-radius:7px;
 position:absolute;
@@ -29,7 +29,7 @@ transition:all 1s;
 height:70px; 
 width:70px;
 position:relative;
-left:205px;
+left:140px;
 }
 
 .container .app-title{
